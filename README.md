@@ -44,6 +44,9 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
 ### Home Page
 ![Home Page](https://github.com/keleshteri/pawfect-match/blob/main/docs/images/homepage.png)
 
+### Puppy Profile
+![Puppy Profile](https://github.com/keleshteri/pawfect-match/blob/main/docs/images/puppy_profile.png)
+
 
 
 ## Project Structure
