@@ -38,6 +38,9 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
 
 ### API Documentation
 - The API documentation can be accessed at [http://localhost:4000/api-docs](http://localhost:4000/api-docs).
+Below is a screenshot of the Swagger UI for our Puppies API, providing a detailed view of all available endpoints and their specifications:
+
+![Swagger UI](https://github.com/keleshteri/pawfect-match/blob/main/docs/images/Swagger_UI.png)
 
 ## Screenshots
 
