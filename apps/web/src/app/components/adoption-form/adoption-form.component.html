@@ -1,0 +1,73 @@
+<div
+  *ngIf="puppy$ | async as puppy"
+  class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg"
+>
+  <h2 class="text-xl font-bold text-center mb-6">Adopt {{ puppy.name }}</h2>
+  <form [formGroup]="adoptionForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Full Name</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        required
+      />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Email Address</label
+      >
+      <input
+        type="email"
+        formControlName="email"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        required
+      />
+    </div>
+    <!-- <div>
+      <label class="block text-sm font-medium text-gray-700">Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        required
+      />
+    </div> -->
+    <!-- <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Preferred Breed</label
+      >
+      <input
+        type="number"
+        formControlName="preferredBreedId"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+      />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Preferred Age Range</label
+      >
+      <input
+        type="text"
+        formControlName="preferredAgeRange"
+        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+      />
+    </div> -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Do you have other pets?</label
+      >
+      <input
+        type="checkbox"
+        formControlName="hasOtherPets"
+        class="mt-1 block"
+      />
+    </div>
+    <button
+      type="submit"
+      class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+    >
+      Submit Application
+    </button>
+  </form>
+</div>

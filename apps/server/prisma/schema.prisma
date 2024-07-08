@@ -1,0 +1,100 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//Breed is a type of dog. For example, "Labrador", "Beagle", "Poodle", etc.
+model Breed {
+  id      Int     @id @default(autoincrement())
+  name    String  @unique
+  puppies Puppy[]
+  User    User[]
+}
+
+//Puppy
+model Puppy {
+  id                  Int                   @id @default(autoincrement())
+  name                String
+  age                 Int
+  gender              String
+  size                String
+  breed               Breed?                @relation(fields: [breedId], references: [id])
+  breedId             Int?
+  photoUrl            String
+  traits              PuppyTrait[]
+  HealthRecord        HealthRecord[]
+  AdoptionApplication AdoptionApplication[]
+}
+
+//Trait is a characteristic that a puppy can have. For example, "friendly", "energetic", "playful", etc.
+model Trait {
+  id          Int          @id @default(autoincrement())
+  description String       @unique
+  puppies     PuppyTrait[]
+}
+
+// This is a join table for the many-to-many relationship between Puppy and Trait
+model PuppyTrait {
+  puppy   Puppy @relation(fields: [puppyId], references: [id])
+  puppyId Int // Foreign key for Puppy
+  trait   Trait @relation(fields: [traitId], references: [id])
+  traitId Int // Foreign key for Trait
+
+  @@id([puppyId, traitId])
+}
+
+// Vaccine is a type of vaccination that a puppy can receive. For example, "Rabies", "Distemper", "Parvovirus", etc.
+model Vaccine {
+  id           Int           @id @default(autoincrement())
+  name         String        @unique //"Rabies", "Distemper", "Parvovirus"
+  vaccinations Vaccination[]
+}
+
+// HealthRecord is a record of a puppy's health information. This includes vaccination status, neutered status, and medical notes.
+model HealthRecord {
+  id             Int           @id @default(autoincrement())
+  puppyId        Int
+  puppy          Puppy         @relation(fields: [puppyId], references: [id])
+  neuteredStatus Boolean
+  medicalNotes   String?
+  vaccinations   Vaccination[]
+}
+
+// Vaccination is a record of a specific vaccination that a puppy has received.
+model Vaccination {
+  id             Int          @id @default(autoincrement())
+  healthRecordId Int
+  healthRecord   HealthRecord @relation(fields: [healthRecordId], references: [id])
+  vaccineId      Int
+  vaccine        Vaccine      @relation(fields: [vaccineId], references: [id])
+  vaccinatedOn   DateTime
+  nextDueDate    DateTime?
+}
+
+// User 
+model User {
+  id                Int                   @id @default(autoincrement())
+  name              String
+  email             String                @unique
+  password          String
+  role              String                @default("USER") //USER - Admin
+  preferredBreedId  Int?
+  preferredBreed    Breed?                @relation(fields: [preferredBreedId], references: [id])
+  preferredAgeRange String?
+  hasOtherPets      Boolean               @default(false)
+  applications      AdoptionApplication[]
+}
+
+model AdoptionApplication {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  puppyId         Int
+  applicationDate DateTime
+  status          String   @default("PENDING")
+  user            User     @relation(fields: [userId], references: [id])
+  puppy           Puppy    @relation(fields: [puppyId], references: [id])
+}

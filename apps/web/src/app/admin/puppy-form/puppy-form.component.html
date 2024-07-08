@@ -1,0 +1,45 @@
+<div class="container mx-auto mt-4">
+  <h2 class="text-2xl font-semibold">{{ isEdit ? "Edit" : "Add" }} Puppy</h2>
+  <form [formGroup]="puppyForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Name"
+      class="input"
+    />
+    <input
+      type="number"
+      formControlName="age"
+      placeholder="Age"
+      class="input"
+    />
+    <input
+      type="text"
+      formControlName="gender"
+      placeholder="Gender"
+      class="input"
+    />
+    <input
+      type="text"
+      formControlName="size"
+      placeholder="Size"
+      class="input"
+    />
+    <input
+      type="text"
+      formControlName="photoUrl"
+      placeholder="Photo URL"
+      class="input"
+    />
+    <select formControlName="breedId" class="input">
+      <option value="">Select Breed</option>
+      <option *ngFor="let breed of breeds" [value]="breed.id">
+        {{ breed.name }}
+      </option>
+    </select>
+    <!-- Traits can be checkboxes or a multi-select dropdown -->
+    <button type="submit" class="btn">
+      {{ isEdit ? "Update" : "Add" }} Puppy
+    </button>
+  </form>
+</div>

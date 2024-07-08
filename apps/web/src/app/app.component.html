@@ -1,0 +1,21 @@
+<div class="min-h-screen flex flex-col">
+  <header class="bg-purple-700 text-white p-5">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">
+        <a href="/" class="hover:underline">Pawfect match</a>
+      </h1>
+      <nav>
+        <ul class="flex gap-8">
+          <li><a href="#" class="hover:underline">Adopt a Pet</a></li>
+          <li><a href="/admin" class="hover:underline">Admin Dashboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="flex-1">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="bg-gray-800 text-white p-5 text-center">
+    Footer content here
+  </footer>
+</div>

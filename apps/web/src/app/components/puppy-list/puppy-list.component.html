@@ -1,0 +1,95 @@
+<div class="bg-white py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-6">
+      <div class="bg-white p-4 shadow-md rounded-lg">
+        <form class="flex flex-wrap gap-4">
+          <div class="flex gap-2">
+            <select
+              class="form-select border-gray-300 rounded-md"
+              [(ngModel)]="selectedBreed"
+              (ngModelChange)="filterPuppies()"
+              name="breedSelect"
+            >
+              <option [value]="''">Any Breed</option>
+              <option *ngFor="let breed of breeds" [value]="breed">
+                {{ breed }}
+              </option>
+            </select>
+            <select
+              class="form-select border-gray-300 rounded-md"
+              [(ngModel)]="selectedSize"
+              (ngModelChange)="filterPuppies()"
+              name="sizeSelect"
+            >
+              <option [value]="''">Any Size</option>
+              <option *ngFor="let size of sizes" [value]="size">
+                {{ size }}
+              </option>
+            </select>
+          </div>
+          <div class="flex gap-2">
+            <select
+              class="form-select border-gray-300 rounded-md"
+              [(ngModel)]="selectedAge"
+              (ngModelChange)="filterPuppies()"
+              name="ageSelect"
+            >
+              <option [value]="''">Any Age</option>
+              <option *ngFor="let age of ages" [value]="age">
+                {{ age }}
+              </option>
+            </select>
+            <select
+              class="form-select border-gray-300 rounded-md"
+              [(ngModel)]="selectedGender"
+              (ngModelChange)="filterPuppies()"
+              name="genderSelect"
+            >
+              <option [value]="''">Any Gender</option>
+              <option *ngFor="let gender of genders" [value]="gender">
+                {{ gender }}
+              </option>
+            </select>
+          </div>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              placeholder="Name or any keyword"
+              class="border-gray-300 rounded-md"
+              [(ngModel)]="searchKeyword"
+              name="searchInput"
+            />
+          </div>
+          <button
+            class="bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded-md"
+            (click)="onSearch()"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Grid for puppies -->
+    <div class="grid grid-cols-4 gap-4">
+      <div
+        *ngFor="let puppy of puppies"
+        class="bg-white shadow-lg rounded-lg p-4"
+      >
+        <img
+          [src]="puppy.photoUrl"
+          alt="{{ puppy.name }}"
+          class="w-full h-48 object-cover rounded-t-lg"
+        />
+        <h5 class="text-lg font-bold mt-2">{{ puppy.name }}</h5>
+        <p class="text-gray-500">{{ puppy.breed }}</p>
+        <p class="text-sm">{{ puppy.age }} years old</p>
+        <button
+          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          (click)="navigateToPuppy(puppy.id)"
+        >
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
