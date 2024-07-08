@@ -9,6 +9,7 @@ import {
 import { PuppyService } from '../../services/puppy.service';
 import { PuppyListPagination } from '../../interfaces/puppy-list-pagination';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-puppies',
@@ -24,7 +25,10 @@ export class ManagePuppiesComponent {
   isEdit = false;
   currentPuppyId: number | null = null;
 
-  constructor(private puppyService: PuppyService) {
+  constructor(
+    private puppyService: PuppyService,
+    private router: Router,
+  ) {
     this.puppyForm = new FormGroup({
       name: new FormControl('', Validators.required),
       age: new FormControl(0, [Validators.required, Validators.min(0)]),
@@ -74,10 +78,11 @@ export class ManagePuppiesComponent {
       size: puppy.size,
       breedId: puppy.breedId || 0,
       photoUrl: puppy.photoUrl || '',
-      traitIds: [], // Assuming traitIds handling
+      traitIds: [],
     });
     this.currentPuppyId = puppy.id;
     this.isEdit = true;
+    this.router.navigate(['admin/edit-puppy', puppy.id]);
   }
 
   onDelete(id: number) {

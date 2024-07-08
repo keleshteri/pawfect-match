@@ -14,14 +14,7 @@ const routes: Routes = [
         path: 'new-puppy',
         component: PuppyFormComponent,
       },
-
-      // {
-      //   path: 'manage-puppies',
-      //   loadComponent: () =>
-      //     import('./manage-puppies/manage-puppies.component').then(
-      //       (m) => m.ManagePuppiesComponent,
-      //     ),
-      // },
+      { path: 'edit-puppy/:id', component: PuppyFormComponent },
     ],
   },
 ];

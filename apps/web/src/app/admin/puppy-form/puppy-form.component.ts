@@ -42,7 +42,7 @@ export class PuppyFormComponent {
     this.route.params.subscribe((params) => {
       if (params['id']) {
         this.isEdit = true;
-        this.currentPuppyId = params['id'];
+        this.currentPuppyId = +params['id'];
         if (this.currentPuppyId !== null) {
           this.loadPuppy(this.currentPuppyId);
         }
