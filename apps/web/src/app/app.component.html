@@ -1,21 +1,33 @@
 <div class="min-h-screen flex flex-col">
-  <header class="bg-purple-700 text-white p-5">
+  <header class="bg-purple-700 text-white py-4 px-5 shadow-md">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">
-        <a href="/" class="hover:underline">Pawfect match</a>
+      <h1 class="text-2xl font-bold">
+        <a href="/" class="hover:text-opacity-80 transition duration-200"
+          >Pawfect Match</a
+        >
       </h1>
       <nav>
-        <ul class="flex gap-8">
-          <li><a href="#" class="hover:underline">Adopt a Pet</a></li>
-          <li><a href="/admin" class="hover:underline">Admin Dashboard</a></li>
+        <ul class="flex gap-6 md:gap-8">
+          <li>
+            <a href="#" class="hover:text-opacity-80 transition duration-200"
+              >Adopt a Pet</a
+            >
+          </li>
+          <li>
+            <a
+              href="/admin"
+              class="hover:text-opacity-80 transition duration-200"
+              >Admin Dashboard</a
+            >
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="flex-1">
+  <main class="flex-1 p-4 md:p-8">
     <router-outlet></router-outlet>
   </main>
-  <footer class="bg-gray-800 text-white p-5 text-center">
-    Footer content here
+  <footer class="bg-gray-900 text-gray-300 py-4 text-center">
+    © 2024 Pawfect Match. All rights reserved.
   </footer>
 </div>
