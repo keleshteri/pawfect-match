@@ -154,63 +154,6 @@ Below is a screenshot of the Swagger UI for our Puppies API, providing a detaile
             └── tsconfig.build.json
             └── tsconfig.json
         └── 📁web
-            └── 📁.angular
-                └── 📁cache
-                    └── 📁18.0.7
-                        └── 📁vite
-                            └── 📁deps
-                                └── @angular_common.js
-                                └── @angular_common.js.map
-                                └── @angular_common_http.js
-                                └── @angular_common_http.js.map
-                                └── @angular_core.js
-                                └── @angular_core.js.map
-                                └── @angular_forms.js
-                                └── @angular_forms.js.map
-                                └── @angular_platform-browser.js
-                                └── @angular_platform-browser.js.map
-                                └── @angular_router.js
-                                └── @angular_router.js.map
-                                └── chunk-N4DUWSRY.js
-                                └── chunk-N4DUWSRY.js.map
-                                └── chunk-SDPT5R2F.js
-                                └── chunk-SDPT5R2F.js.map
-                                └── chunk-WSIGJUT4.js
-                                └── chunk-WSIGJUT4.js.map
-                                └── chunk-XOK632QO.js
-                                └── chunk-XOK632QO.js.map
-                                └── package.json
-                                └── _metadata.json
-                            └── 📁deps_temp_0686e6ed
-                                └── @angular_common.js
-                                └── @angular_common.js.map
-                                └── @angular_common_http.js
-                                └── @angular_common_http.js.map
-                                └── @angular_core.js
-                                └── @angular_core.js.map
-                                └── @angular_forms.js
-                                └── @angular_forms.js.map
-                                └── @angular_platform-browser.js
-                                └── @angular_platform-browser.js.map
-                                └── @angular_router.js
-                                └── @angular_router.js.map
-                                └── chunk-N4DUWSRY.js
-                                └── chunk-N4DUWSRY.js.map
-                                └── chunk-SDPT5R2F.js
-                                └── chunk-SDPT5R2F.js.map
-                                └── chunk-WSIGJUT4.js
-                                └── chunk-WSIGJUT4.js.map
-                                └── chunk-XOK632QO.js
-                                └── chunk-XOK632QO.js.map
-                                └── package.json
-                        └── 📁web
-                            └── .tsbuildinfo
-            └── .editorconfig
-            └── .gitignore
-            └── 📁.vscode
-                └── extensions.json
-                └── launch.json
-                └── tasks.json
             └── angular.json
             └── package-lock.json
             └── package.json
