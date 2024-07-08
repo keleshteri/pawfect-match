@@ -39,11 +39,35 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
 ### API Documentation
 - The API documentation can be accessed at [http://localhost:4000/api-docs](http://localhost:4000/api-docs).
 
+## Screenshots
+
+### Home Page
+![Home Page](https://github.com/keleshteri/pawfect-match/blob/main/docs/images/homepage.png)
+
+
 
 ## Project Structure
-```
+ ```
 └── 📁pawfect-match
     └── .gitignore
+    └── 📁.husky
+        └── 📁_
+            └── .gitignore
+            └── applypatch-msg
+            └── commit-msg
+            └── h
+            └── husky.sh
+            └── post-applypatch
+            └── post-checkout
+            └── post-commit
+            └── post-merge
+            └── post-rewrite
+            └── pre-applypatch
+            └── pre-auto-gc
+            └── pre-commit
+            └── pre-push
+            └── pre-rebase
+            └── prepare-commit-msg
     └── 📁apps
         └── 📁server
             └── .env
@@ -72,19 +96,15 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
                 └── main.ts
                 └── 📁modules
                     └── 📁adoption-application
-                        └── adoption-application.controller.spec.ts
                         └── adoption-application.controller.ts
                         └── adoption-application.module.ts
-                        └── adoption-application.service.spec.ts
                         └── adoption-application.service.ts
                         └── 📁dtos
                             └── adoption-application-create-user.dto.ts
                             └── adoption-application-create.dto.ts
                     └── 📁breeds
-                        └── breeds.controller.spec.ts
                         └── breeds.controller.ts
                         └── breeds.module.ts
-                        └── breeds.service.spec.ts
                         └── breeds.service.ts
                     └── 📁common
                         └── all-exceptions.filter.ts
@@ -115,15 +135,12 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
                         └── puppies.controller.ts
                         └── puppies.mapper.service.ts
                         └── puppies.module.ts
-                        └── puppies.service.spec.ts
                         └── puppies.service.ts
                     └── 📁users
                         └── 📁dtos
                             └── create-user.dto.ts
-                        └── users.controller.spec.ts
                         └── users.controller.ts
                         └── users.module.ts
-                        └── users.service.spec.ts
                         └── users.service.ts
             └── 📁test
                 └── app.e2e-spec.ts
@@ -135,6 +152,29 @@ PawfectMatch is a web application designed to facilitate the adoption of puppies
                 └── 📁cache
                     └── 📁18.0.7
                         └── 📁vite
+                            └── 📁deps
+                                └── @angular_common.js
+                                └── @angular_common.js.map
+                                └── @angular_common_http.js
+                                └── @angular_common_http.js.map
+                                └── @angular_core.js
+                                └── @angular_core.js.map
+                                └── @angular_forms.js
+                                └── @angular_forms.js.map
+                                └── @angular_platform-browser.js
+                                └── @angular_platform-browser.js.map
+                                └── @angular_router.js
+                                └── @angular_router.js.map
+                                └── chunk-N4DUWSRY.js
+                                └── chunk-N4DUWSRY.js.map
+                                └── chunk-SDPT5R2F.js
+                                └── chunk-SDPT5R2F.js.map
+                                └── chunk-WSIGJUT4.js
+                                └── chunk-WSIGJUT4.js.map
+                                └── chunk-XOK632QO.js
+                                └── chunk-XOK632QO.js.map
+                                └── package.json
+                                └── _metadata.json
                             └── 📁deps_temp_0686e6ed
                                 └── @angular_common.js
                                 └── @angular_common.js.map
