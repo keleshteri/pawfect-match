@@ -50,30 +50,95 @@ Below is a screenshot of the Swagger UI for our Puppies API, providing a detaile
 ### Puppy Profile
 ![Puppy Profile](https://github.com/keleshteri/pawfect-match/blob/main/docs/images/puppy_profile.png)
 
+## Database Schema Diagram
 
+Below is the database schema diagram for the PawfectMatch application, visualizing the relationships between various models like Breed, Puppy, User, etc.
 
+```mermaid
+erDiagram
+
+    Breed ||--|{ Puppy : has
+    Puppy ||--|{ Trait : exhibits
+    Trait ||--|{ PuppyTrait : ""
+    PuppyTrait ||--|| Puppy : ""
+    PuppyTrait ||--|| Trait : ""
+    Puppy ||--|{ HealthRecord : ""
+    HealthRecord ||--|{ Vaccination : ""
+    Vaccine ||--|{ Vaccination : includes
+    Puppy ||--|{ AdoptionApplication : ""
+    User ||--|{ AdoptionApplication : applies
+    AdoptionApplication ||--|| Puppy : ""
+    AdoptionApplication ||--|| User : ""
+    User ||--|| Breed : prefers
+
+    Breed {
+        int id PK
+        string name
+    }
+
+    Puppy {
+        int id PK
+        string name
+        int age
+        string gender
+        string size
+        string photoUrl
+        int breedId FK
+    }
+
+    Trait {
+        int id PK
+        string description
+    }
+
+    PuppyTrait {
+        int puppyId FK
+        int traitId FK
+    }
+
+    Vaccine {
+        int id PK
+        string name
+    }
+
+    HealthRecord {
+        int id PK
+        int puppyId FK
+        boolean neuteredStatus
+        string medicalNotes
+    }
+
+    Vaccination {
+        int id PK
+        int healthRecordId FK
+        int vaccineId FK
+        dateTime vaccinatedOn
+        dateTime nextDueDate
+    }
+
+    User {
+        int id PK
+        string name
+        string email
+        string password
+        string role
+        int preferredBreedId FK
+        string preferredAgeRange
+        boolean hasOtherPets
+    }
+
+    AdoptionApplication {
+        int id PK
+        int userId FK
+        int puppyId FK
+        dateTime applicationDate
+        string status
+    }
+```
 ## Project Structure
  ```
 └── 📁pawfect-match
     └── .gitignore
-    └── 📁.husky
-        └── 📁_
-            └── .gitignore
-            └── applypatch-msg
-            └── commit-msg
-            └── h
-            └── husky.sh
-            └── post-applypatch
-            └── post-checkout
-            └── post-commit
-            └── post-merge
-            └── post-rewrite
-            └── pre-applypatch
-            └── pre-auto-gc
-            └── pre-commit
-            └── pre-push
-            └── pre-rebase
-            └── prepare-commit-msg
     └── 📁apps
         └── 📁server
             └── .env
