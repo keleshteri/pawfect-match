@@ -7,6 +7,7 @@ import { CommonModule } from './modules/common/common.module';
 import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
 import { BreedsModule } from './modules/breeds/breeds.module';
 import { AdoptionApplicationModule } from './modules/adoption-application/adoption-application.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AdoptionApplicationModule } from './modules/adoption-application/adopti
     CommonModule,
     BreedsModule,
     AdoptionApplicationModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
