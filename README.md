@@ -2,7 +2,6 @@
 
 ![Current Version](https://img.shields.io/badge/version-v0.1-blue)
 
-
 ## Overview
 PawfectMatch is a web application designed to facilitate the adoption of puppies. It allows users to view, search, and initiate the adoption process for puppies.
 
